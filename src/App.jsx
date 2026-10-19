@@ -3,6 +3,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Registro from './pages/Registro.jsx';
 import Torneos from './pages/Torneos.jsx';
+import Inscripcion from './pages/Inscripcion.jsx';
 
 export default function App() {
   return (
@@ -23,6 +24,9 @@ export default function App() {
           <Link className="nav-link" to="/registro">
             Registro
           </Link>
+          <Link className="nav-link" to="/inscripcion">
+            Inscripción
+          </Link>
         </div>
       </nav>
 
@@ -30,6 +34,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/torneos" element={<Torneos />} />
+        <Route path="/inscripcion" element={<Inscripcion />} />
       </Routes>
 
       <footer className="text-center py-3">
