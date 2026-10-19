@@ -1,0 +1,193 @@
+:root {
+    --color-principal: #1f1f1f;
+    --color-secundario: #5b5bf7;
+    --color-fondo: #f4f4f4;
+    --color-texto: #222222;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--color-principal);
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: var(--color-secundario);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-principal);
+    color: white;
+}
+#lista-torneos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+#lista-torneos article {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+}
+
+#lista-torneos article h3 {
+    color: var(--color-secundario);
+    margin-top: 0;
+}
+#lista-torneos button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#lista-torneos button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.estado-abierto {
+    color: green;
+    font-weight: bold;
+}
+
+.estado-curso {
+    color: orange;
+    font-weight: bold;
+}
+
+.estado-finalizado {
+    color: red;
+    font-weight: bold;
+}
+#lista-equipos,
+#lista-partidas,
+#lista-ranking {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+#lista-equipos article,
+#lista-partidas article,
+#lista-ranking article {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+}
+
+#lista-equipos article h3,
+#lista-partidas article h3,
+#lista-ranking article h3 {
+    color: var(--color-secundario);
+    margin-top: 0;
+}
+form {
+    max-width: 500px;
+    margin-top: 25px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+}
+
+form div {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--color-secundario);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    opacity: 0.8;
+}
+
+form small {
+    display: block;
+    margin-top: 5px;
+    color: red;
+}
+.banner-principal {
+    width: 100%;
+    max-width: 1200px;
+    display: block;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #lista-torneos,
+    #lista-equipos,
+    #lista-partidas,
+    #lista-ranking {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .banner-principal {
+        width: 100%;
+    }
+
+    iframe {
+        width: 100%;
+    }
+}
