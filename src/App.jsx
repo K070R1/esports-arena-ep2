@@ -1,5 +1,7 @@
+
 import { Link, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
+import Registro from './pages/Registro.jsx';
 
 export default function App() {
   return (
@@ -9,16 +11,21 @@ export default function App() {
         <p>Gestión de torneos competitivos</p>
       </header>
 
-      <nav className="navbar navbar-expand">
-        <div className="container justify-content-center">
+      <nav className="navbar">
+        <div className="container d-flex justify-content-center gap-4">
           <Link className="nav-link" to="/">
             Inicio
+          </Link>
+
+          <Link className="nav-link" to="/registro">
+            Registro
           </Link>
         </div>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/registro" element={<Registro />} />
       </Routes>
 
       <footer className="text-center py-3">
@@ -28,5 +35,6 @@ export default function App() {
     </>
   );
 }
+
 
 
