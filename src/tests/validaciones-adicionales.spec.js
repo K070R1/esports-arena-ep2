@@ -122,3 +122,39 @@ describe('Validaciones adicionales del sistema', () => {
   });
 
 });
+
+
+describe('Pruebas adicionales de estados de torneos', () => {
+
+  it('Debe bloquear a un organizador en un torneo abierto', () => {
+    const accion = obtenerAccionTorneo(
+      { estado: 'ABIERTO' },
+      'ORGANIZADOR'
+    );
+
+    expect(accion.habilitado).toBeFalse();
+    expect(accion.texto).toBe('Solo jugadores');
+  });
+
+  it('Debe bloquear a un administrador en un torneo en curso', () => {
+    const accion = obtenerAccionTorneo(
+      { estado: 'EN CURSO' },
+      'ADMINISTRADOR'
+    );
+
+    expect(accion.habilitado).toBeFalse();
+    expect(accion.texto).toBe('Inscripciones cerradas');
+  });
+
+  it('Debe permitir consultar resultados de un torneo finalizado', () => {
+    const accion = obtenerAccionTorneo(
+      { estado: 'FINALIZADO' },
+      'JUGADOR'
+    );
+
+    expect(accion.habilitado).toBeTrue();
+    expect(accion.texto).toBe('Ver resultados');
+  });
+
+});
+

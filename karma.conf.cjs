@@ -3,11 +3,13 @@ module.exports = function (config) {
     frameworks: ['jasmine'],
 
     files: [
-      'src/tests/**/*.spec.js'
+    'src/tests/**/*.spec.js',
+    'src/tests/**/*.spec.jsx'
     ],
 
     preprocessors: {
-      'src/tests/**/*.spec.js': ['webpack']
+    'src/tests/**/*.spec.js': ['webpack'],
+    'src/tests/**/*.spec.jsx': ['webpack']
     },
 
     webpack: {
