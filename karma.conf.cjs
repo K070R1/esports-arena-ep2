@@ -32,9 +32,13 @@ module.exports = function (config) {
                     'babel-plugin-istanbul',
                     {
                         include: [
-                            'src/pages/Registro.jsx',
-                            'src/pages/Inscripcion.jsx',
-                            'src/pages/Torneos.jsx'
+                        'src/pages/Registro.jsx',
+                        'src/pages/Inscripcion.jsx',
+                        'src/pages/Torneos.jsx',
+                        'src/pages/Equipos.jsx',
+                        'src/pages/Partidas.jsx',
+                        'src/pages/Ranking.jsx',
+                        'src/data/datos.js'
                         ],
                         exclude: ['src/tests/**']
                     }

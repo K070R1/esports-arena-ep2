@@ -3,6 +3,9 @@ import Home from './pages/Home.jsx';
 import Registro from './pages/Registro.jsx';
 import Torneos from './pages/Torneos.jsx';
 import Inscripcion from './pages/Inscripcion.jsx';
+import Equipos from './pages/Equipos.jsx';
+import Partidas from './pages/Partidas.jsx';
+import Ranking from './pages/Ranking.jsx';
 
 export default function App() {
   return (
@@ -26,6 +29,15 @@ export default function App() {
           <Link className="nav-link" to="/inscripcion">
             Inscripción
           </Link>
+          <Link className="nav-link" to="/equipos">
+            Equipos
+          </Link>
+          <Link className="nav-link" to="/partidas">
+            Partidas
+          </Link>
+          <Link className="nav-link" to="/ranking">
+            Ranking
+          </Link>
         </div>
       </nav>
 
@@ -34,6 +46,9 @@ export default function App() {
         <Route path="/registro" element={<Registro />} />
         <Route path="/torneos" element={<Torneos />} />
         <Route path="/inscripcion" element={<Inscripcion />} />
+        <Route path="/equipos" element={<Equipos />} />
+        <Route path="/partidas" element={<Partidas />} />
+        <Route path="/ranking" element={<Ranking />} />
       </Routes>
 
       <footer className="text-center py-3">
