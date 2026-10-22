@@ -13,7 +13,7 @@ export default function Home() {
   }, [perfil]);
 
   return (
-    <main className="container py-4">
+    <main className="container-fluid pagina-inicio py-4">
       <section className="mb-4">
         <h2>Perfil de prueba</h2>
         <p>Selecciona un perfil para simular los diferentes roles del sistema.</p>

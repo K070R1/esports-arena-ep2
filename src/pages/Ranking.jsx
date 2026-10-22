@@ -24,7 +24,7 @@ export default function Ranking() {
   );
 
   return (
-    <main className="container py-4">
+    <main className="container-fluid pagina-ranking py-4">
       <section>
         <h2>Ranking</h2>
 

@@ -29,7 +29,7 @@ function TarjetaEquipo({ equipo }) {
 // Página principal de equipos
 export default function Equipos() {
   return (
-    <main className="container py-4">
+    <main className="container-fluid pagina-equipos py-4">
       <section>
         <h2>Equipos</h2>
 

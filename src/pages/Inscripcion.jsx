@@ -77,7 +77,7 @@ export default function Inscripcion() {
   );
 
   return (
-    <main className="container py-5">
+    <main className="container-fluid pagina-inscripcion py-5">
       <section className="row justify-content-center">
         <div className="col-12 col-md-8 col-lg-6">
           <h2>Inscripción a torneo</h2>

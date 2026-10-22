@@ -10,10 +10,21 @@ import Ranking from './pages/Ranking.jsx';
 export default function App() {
   return (
     <>
-      <header className="text-center py-3">
-        <h1>eSports Arena Manager</h1>
-        <p>Gestión de torneos competitivos</p>
+      
+      <header className="banner-header">
+        <img
+          src="/img/banner-header.png"
+          alt=""
+          className="banner-header-imagen"
+        />
+
+        <img
+          src="/img/logo-esports.png"
+          alt="eSports Arena Manager - Gestión de torneos competitivos"
+          className="banner-logo"
+        />
       </header>
+
 
       <nav className="navbar">
         <div className="container d-flex justify-content-center gap-4">

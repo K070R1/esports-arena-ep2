@@ -1,8 +1,19 @@
+
+/* ==========================================
+   ESPORTS ARENA MANAGER
+   HOJA DE ESTILOS PRINCIPAL
+========================================== */
+
+/* 1. VARIABLES Y ESTILOS GENERALES */
+
 :root {
     --color-principal: #1f1f1f;
     --color-secundario: #5b5bf7;
     --color-fondo: #f4f4f4;
     --color-texto: #222222;
+    --color-tarjeta: rgba(20, 23, 45, 0.94);
+    --color-borde: rgba(145, 110, 255, 0.45);
+    --color-titulo: #b9a7ff;
 }
 
 body {
@@ -12,12 +23,62 @@ body {
     color: var(--color-texto);
 }
 
+main {
+    padding: 30px;
+    min-height: 100vh;
+}
+
+/* 2. HEADER, NAVEGACIÓN Y FOOTER */
+
 header {
     text-align: center;
     padding: 30px;
     background-color: var(--color-principal);
     color: white;
 }
+
+
+/* Banner principal */
+
+header.banner-header {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #10101f;
+}
+
+/* Imagen de fondo */
+
+.banner-header-imagen {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Logo centrado encima del fondo */
+
+.banner-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 70%;
+    max-width: 700px;
+    max-height: 330px;
+    height: auto;
+    object-fit: contain;
+
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.9));
+    z-index: 2;
+}
+
+
 
 nav {
     display: flex;
@@ -32,8 +93,8 @@ nav a {
     text-decoration: none;
 }
 
-main {
-    padding: 30px;
+nav a:hover {
+    color: #e0dcff;
 }
 
 footer {
@@ -42,6 +103,94 @@ footer {
     background-color: var(--color-principal);
     color: white;
 }
+
+/* 3. FONDOS DE LAS PÁGINAS */
+
+.pagina-inicio,
+.pagina-torneos,
+.pagina-registro,
+.pagina-inscripcion,
+.pagina-equipos,
+.pagina-partidas,
+.pagina-ranking {
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Inicio */
+.pagina-inicio {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+        url('/img/fondo.png');
+}
+
+/* Torneos */
+.pagina-torneos {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+        url('/img/fondo2.png');
+}
+
+/* Registro */
+.pagina-registro {
+    background-image:
+        linear-gradient(rgba(8, 5, 28, 0.78), rgba(8, 5, 28, 0.85)),
+        url('/img/fondo.png');
+}
+
+/* Inscripción */
+.pagina-inscripcion {
+    background-image:
+        linear-gradient(rgba(10, 5, 30, 0.78), rgba(10, 5, 30, 0.85)),
+        url('/img/fondo2.png');
+}
+
+/* Equipos */
+.pagina-equipos {
+    background-image:
+        linear-gradient(rgba(4, 14, 32, 0.78), rgba(4, 14, 32, 0.85)),
+        url('/img/fondo.png');
+}
+
+/* Partidas */
+.pagina-partidas {
+    background-image:
+        linear-gradient(rgba(20, 5, 30, 0.78), rgba(20, 5, 30, 0.85)),
+        url('/img/fondo2.png');
+}
+
+/* Ranking */
+.pagina-ranking {
+    background-image:
+        linear-gradient(rgba(10, 8, 35, 0.78), rgba(10, 8, 35, 0.85)),
+        url('/img/fondo.png');
+}
+
+/* 4. TÍTULOS Y DESCRIPCIONES */
+
+.pagina-inicio h2,
+.pagina-inicio section > p,
+.pagina-inicio section > label,
+.pagina-torneos h2,
+.pagina-torneos section > p,
+.pagina-registro h2,
+.pagina-inscripcion h2,
+.pagina-equipos h2,
+.pagina-partidas h2,
+.pagina-ranking h2,
+.pagina-registro section > div > p,
+.pagina-inscripcion section > div > p,
+.pagina-equipos section > p,
+.pagina-partidas section > p,
+.pagina-ranking section > p {
+    color: #ffffff;
+}
+
+/* 5. TARJETAS DE TORNEOS */
+
 #lista-torneos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -49,29 +198,39 @@ footer {
     margin-top: 25px;
 }
 
-#lista-torneos article {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+#lista-torneos article,
+.pagina-torneos article {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 24px;
+    border-radius: 12px;
     border: 1px solid #dddddd;
+    height: 100%;
 }
 
-#lista-torneos article h3 {
+#lista-torneos article h3,
+.pagina-torneos article h3 {
     color: var(--color-secundario);
     margin-top: 0;
 }
-#lista-torneos button {
+
+#lista-torneos button,
+.pagina-torneos article button {
     padding: 10px 15px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
+    background-color: var(--color-secundario);
+    color: white;
 }
 
-#lista-torneos button:disabled {
+#lista-torneos button:disabled,
+.pagina-torneos article button:disabled {
     cursor: not-allowed;
     opacity: 0.6;
 }
+
+/* Estados de torneos */
 
 .estado-abierto {
     color: green;
@@ -79,7 +238,7 @@ footer {
 }
 
 .estado-curso {
-    color: orange;
+    color: #b36b00;
     font-weight: bold;
 }
 
@@ -87,6 +246,9 @@ footer {
     color: red;
     font-weight: bold;
 }
+
+/* 6. TARJETAS DE EQUIPOS, PARTIDAS Y RANKING */
+
 #lista-equipos,
 #lista-partidas,
 #lista-ranking {
@@ -98,19 +260,38 @@ footer {
 
 #lista-equipos article,
 #lista-partidas article,
-#lista-ranking article {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #dddddd;
+#lista-ranking article,
+.pagina-equipos article,
+.pagina-partidas article,
+.pagina-ranking article {
+    background: var(--color-tarjeta);
+    color: white;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid var(--color-borde);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pagina-equipos article:hover,
+.pagina-partidas article:hover,
+.pagina-ranking article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(91, 91, 247, 0.35);
 }
 
 #lista-equipos article h3,
 #lista-partidas article h3,
-#lista-ranking article h3 {
-    color: var(--color-secundario);
+#lista-ranking article h3,
+.pagina-equipos article h3,
+.pagina-partidas article h3,
+.pagina-ranking article h3 {
+    color: var(--color-titulo);
     margin-top: 0;
 }
+
+/* 7. FORMULARIOS */
+
 form {
     max-width: 500px;
     margin-top: 25px;
@@ -158,6 +339,29 @@ form small {
     margin-top: 5px;
     color: red;
 }
+
+/* Formularios de Registro e Inscripción */
+
+.pagina-registro form,
+.pagina-inscripcion form {
+    max-width: 100%;
+    background: rgba(18, 20, 42, 0.94);
+    color: white;
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Mantener visibles los mensajes de validación */
+
+.pagina-registro .invalid-feedback,
+.pagina-inscripcion .text-danger {
+    color: #ff9b9b !important;
+}
+
+/* 8. BANNER Y CONTENIDO MULTIMEDIA */
+
 .banner-principal {
     width: 100%;
     max-width: 1200px;
@@ -165,11 +369,17 @@ form small {
     margin-top: 25px;
     border-radius: 10px;
 }
-@media (max-width: 768px) {
 
+/* 9. DISEÑO RESPONSIVE */
+
+@media (max-width: 768px) {
     nav {
         flex-direction: column;
         align-items: center;
+    }
+
+    main {
+        padding: 15px;
     }
 
     #lista-torneos,
@@ -179,15 +389,128 @@ form small {
         grid-template-columns: 1fr;
     }
 
-    main {
-        padding: 15px;
+    .pagina-inicio,
+    .pagina-torneos,
+    .pagina-registro,
+    .pagina-inscripcion,
+    .pagina-equipos,
+    .pagina-partidas,
+    .pagina-ranking {
+        background-attachment: scroll;
     }
 
-    .banner-principal {
-        width: 100%;
+    .pagina-registro form,
+    .pagina-inscripcion form {
+        padding: 20px;
     }
 
+    .banner-principal,
     iframe {
         width: 100%;
     }
+}
+
+
+/* ===== AJUSTES DE INICIO Y TORNEOS ===== */
+
+/* Filtro morado en ambas páginas */
+.pagina-inicio,
+.pagina-torneos {
+    background-image:
+        linear-gradient(
+            rgba(35, 12, 70, 0.78),
+            rgba(12, 8, 40, 0.88)
+        ),
+        url('/img/fondo.png');
+}
+
+/* Torneos utiliza su propia imagen */
+.pagina-torneos {
+    background-image:
+        linear-gradient(
+            rgba(35, 12, 70, 0.78),
+            rgba(12, 8, 40, 0.88)
+        ),
+        url('/img/fondo2.png');
+}
+
+/* Tarjetas moradas de Torneos */
+.pagina-torneos article {
+    background: var(--color-tarjeta);
+    color: white;
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pagina-torneos article h3 {
+    color: var(--color-titulo);
+}
+
+.pagina-torneos article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(91, 91, 247, 0.35);
+}
+
+/* Centrar el contenido de Inicio */
+.pagina-inicio {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Secciones de Inicio como tarjetas */
+.pagina-inicio section {
+    width: 100%;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Selector de perfil centrado */
+.pagina-inicio #perfil {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Banner centrado */
+.pagina-inicio .banner-principal {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Video centrado */
+.pagina-inicio .ratio {
+    max-width: 850px;
+    margin: 20px auto 0;
+}
+
+@media (max-width: 768px) {
+    .pagina-inicio section {
+        padding: 20px;
+    }
+}
+
+/* Banner adaptable a celulares */
+header.banner-header {
+    height: 240px;
+}
+
+.banner-logo {
+    width: 95%;
+    max-height: 200px;
+}
+
+.banner-header-imagen {
+    object-position: center;
 }

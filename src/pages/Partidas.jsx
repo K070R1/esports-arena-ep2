@@ -31,7 +31,7 @@ function TarjetaPartida({ partida }) {
 // Página principal de partidas
 export default function Partidas() {
   return (
-    <main className="container py-4">
+    <main className="container-fluid pagina-partidas py-4">
       <section>
         <h2>Partidas</h2>
 

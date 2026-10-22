@@ -78,7 +78,7 @@ export default function Torneos() {
   }, []);
 
   return (
-    <main className="container py-4">
+    <main className="container-fluid pagina-torneos py-4">
       <section>
         <h2>Torneos disponibles</h2>
 
